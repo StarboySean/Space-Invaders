@@ -12,3 +12,5 @@ script = ExtResource( 2 )
 [node name="Swarm" parent="." instance=ExtResource( 3 )]
 position = Vector2( 193, 75 )
 scale = Vector2( 0.25, 0.25 )
+
+[connection signal="game_over" from="Swarm" to="." method="_on_Swarm_game_over"]

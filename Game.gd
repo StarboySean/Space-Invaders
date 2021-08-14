@@ -16,3 +16,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_Swarm_game_over():
+	get_tree().change_scene("res://GameOver.tscn")

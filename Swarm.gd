@@ -1,9 +1,8 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+signal game_over
+
 export var speed: = 100.0
 var vector: = Vector2()
 export var down_time = 1.0
@@ -22,7 +21,8 @@ func _process(delta):
 	else:
 		vector.x = speed*direction
 		vector.y = 0.0
-
+	if not $Left.is_on_screen() and not $Right.is_on_screen():
+		emit_signal("game_over")
 
 func _on_Right_screen_exited():
 	reverse()
