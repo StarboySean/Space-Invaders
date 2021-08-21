@@ -2,6 +2,7 @@ extends Node2D
 
 
 signal game_over
+signal win
 
 export var speed: = 100.0
 var vector: = Vector2()
@@ -23,6 +24,8 @@ func _process(delta):
 		vector.y = 0.0
 	if not $Left.is_on_screen() and not $Right.is_on_screen():
 		emit_signal("game_over")
+	if get_child_count() <= 2:
+		emit_signal("win")
 
 func _on_Right_screen_exited():
 	reverse()

@@ -20,3 +20,8 @@ func _ready():
 
 func _on_Swarm_game_over():
 	get_tree().change_scene("res://GameOver.tscn")
+	
+
+
+func _on_Swarm_win():
+	get_tree().change_scene("res://GameWin.tscn")
