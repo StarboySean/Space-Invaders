@@ -1,6 +1,6 @@
 extends Node2D
 
-var Invader = load("res://Alien.tscn")
+var Swarm = preload("res://Swarm.tscn")
 
 
 
@@ -23,5 +23,8 @@ func _on_Swarm_game_over():
 	
 
 
-func _on_Swarm_win():
-	get_tree().change_scene("res://GameWin.tscn")
+func _on_Swarm_win(last_swarm):
+	#get_tree().change_scene("res://GameWin.tscn")
+	var swarm = Swarm.instance()
+	swarm.speed = last_swarm.speed * 1.5
+	add_child(swarm)

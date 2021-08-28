@@ -2,7 +2,7 @@ extends Node2D
 
 
 signal game_over
-signal win
+signal win(swarm)
 
 export var speed: = 100.0
 var vector: = Vector2()
@@ -25,7 +25,8 @@ func _process(delta):
 	if not $Left.is_on_screen() and not $Right.is_on_screen():
 		emit_signal("game_over")
 	if get_child_count() <= 2:
-		emit_signal("win")
+		emit_signal("win", self)
+		queue_free()
 
 func _on_Right_screen_exited():
 	reverse()

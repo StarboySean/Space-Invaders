@@ -4,6 +4,8 @@
 [ext_resource path="res://Swarm.gd" type="Script" id=2]
 
 [node name="Swarm" type="Node2D"]
+position = Vector2( 190, 50 )
+scale = Vector2( 0.25, 0.25 )
 script = ExtResource( 2 )
 
 [node name="Alien" parent="." instance=ExtResource( 1 )]
@@ -23,6 +25,21 @@ position = Vector2( 299.68, 11.8921 )
 
 [node name="Alien4" parent="." instance=ExtResource( 1 )]
 position = Vector2( 302.059, 154.597 )
+
+[node name="Alien5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 149.84, 152.219 )
+
+[node name="Alien6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 7.13519, 147.462 )
+
+[node name="Alien7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 304.437, 287.788 )
+
+[node name="Alien8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 152.219, 285.41 )
+
+[node name="Alien9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 7.13525, 287.788 )
 
 [connection signal="screen_exited" from="Left" to="." method="_on_Left_screen_exited"]
 [connection signal="screen_exited" from="Right" to="." method="_on_Right_screen_exited"]
