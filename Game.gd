@@ -38,7 +38,11 @@ func make_boss():
 	var boss = Boss.instance()
 	var viewport_rect := get_viewport_rect()
 	var boss_size :Vector2= boss.get_texture_size() * boss.scale
-	boss.position = Vector2(viewport_rect.size.x * 0.5, - boss_size.x)
+	var min_x := boss_size.x * 0.5
+	var x_range := viewport_rect.size.x - boss_size.x
+	var boss_x := min_x + x_range * randf()
+	boss.position = Vector2(boss_x, - boss_size.y)
+	boss.connect("game_over", self, "_on_Swarm_game_over")
 	add_child(boss)
 	var delay = get_boss_delay()
 	$BossTimer.start(delay)

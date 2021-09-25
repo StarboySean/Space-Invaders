@@ -37,6 +37,8 @@ func reverse():
 	down_remaining = down_time
 	direction *= -1.0
 
+func hit():
+	pass
 
 func _on_Left_screen_exited():
 	reverse()

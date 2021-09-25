@@ -22,5 +22,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_Laser_body_entered(body):
 	if body.good != good:
+		body.hit()
 		body.queue_free()
 		queue_free()
